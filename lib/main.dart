@@ -173,6 +173,27 @@ class _CalculatorState extends State<Calculator> {
             ),
           ),
         ));
+      } else if (symbol == 'sin' ||
+          symbol == 'cos' ||
+          symbol == 'tan' ||
+          symbol == 'log' ||
+          symbol == 'ln' ||
+          symbol == 'sqrt') {
+        temp.add(SizedBox(
+          width: 69.0,
+          child: FlatButton(
+            color: Colors.grey[600],
+            onPressed: () {
+              setState(() {
+                calc = '$calc$symbol(';
+              });
+            },
+            child: Text(
+              '$symbol',
+              style: TextStyle(fontSize: 20.0),
+            ),
+          ),
+        ));
       } else {
         temp.add(SizedBox(
           width: 69.0,
